@@ -49,6 +49,10 @@ header {
   font-size: large;
 }
 
+.title {
+  font-size: xx-large;
+}
+
 .center-block {
   flex: 50%;
   padding: 9rem;
@@ -71,24 +75,25 @@ header {
   width: 100%;
   height: 3rem;
   background-color: gray;
-  border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: large;
+  border-radius: 1rem 1rem 0 0;
 }
 
 .image1 {
   width: 100%;
   height: 50%;
-  background-image: url(IMG/Guess-My-Number.png);
+  background-image: url(../IMG/Guess-My-Number.png);
   background-size: cover;
-  border-radius: 1rem;
+  border-radius: 0px 0px 1rem 1rem;
 }
 
 .image2 {
   width: 100%;
   height: 50%;
-  background-image: url(IMG/Pig-Game.png);
+  background-image: url(../IMG/Pig-Game.png);
   background-size: cover;
-  border-radius: 1rem;
+  border-radius: 0px 0px 1rem 1rem;
 }
