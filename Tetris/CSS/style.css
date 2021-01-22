@@ -1,16 +1,17 @@
-:root {
-  --backgroundColor: rgba(246, 241, 209);
-  --colorShadeA: rgb(106, 163, 137);
-  --colorShadeB: rgb(121, 186, 156);
-  --colorShadeC: rgb(150, 232, 195);
-  --colorShadeD: rgb(187, 232, 211);
-  --colorShadeE: rgb(205, 255, 232);
-}
-
 body {
   background-image: url(../IMG/Tetris.jpg);
   background-size: cover;
   font-family: "Press Start 2P", cursive;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+}
+header {
+  width: 25%;
+  height: 10%;
+  border: 3px solid #73ad21;
+  align-self: center;
 }
 .container {
   display: flex;
@@ -23,14 +24,38 @@ body {
   display: flex;
   flex-wrap: wrap;
   background-color: whitesmoke;
-  border: 2px solid #dadada;
+  border: 2px solid #00f8f8;
   border-radius: 7px;
+}
+#score {
+  color: whitesmoke;
+}
+.title {
+  color: whitesmoke;
 }
 
 .button-score {
   align-self: flex-start;
-
-  background-color: whitesmoke;
+  filter: drop-shadow(3px 10px 15px rgba(0, 0, 0, 0.45));
+}
+.button-score button {
+  height: 30px;
+  width: 100px;
+  background: linear-gradient(to bottom, #bada55, #559ada);
+  font-weight: bold;
+  color: white;
+  font-size: 1rem;
+  stroke: black;
+  outline: none;
+  border-radius: 1rem;
+}
+button:hover {
+  cursor: pointer;
+  filter: drop-shadow(3px 5px 5px rgba(0, 0, 0, 0.45));
+}
+button:active {
+  filter: none;
+  transform: scale(0.95);
 }
 .mini-grid {
   width: 80px;
