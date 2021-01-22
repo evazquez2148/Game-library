@@ -1,9 +1,56 @@
+:root {
+  --backgroundColor: rgba(246, 241, 209);
+  --colorShadeA: rgb(106, 163, 137);
+  --colorShadeB: rgb(121, 186, 156);
+  --colorShadeC: rgb(150, 232, 195);
+  --colorShadeD: rgb(187, 232, 211);
+  --colorShadeE: rgb(205, 255, 232);
+}
+
+body {
+  background-image: url(../IMG/Tetris.jpg);
+  background-size: cover;
+  font-family: "Press Start 2P", cursive;
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 .grid {
   width: 200px;
   height: 400px;
-  background-color: yellow;
   display: flex;
   flex-wrap: wrap;
+  background-color: whitesmoke;
+  border: 2px solid #dadada;
+  border-radius: 7px;
+}
+
+.button-score {
+  align-self: flex-start;
+
+  background-color: whitesmoke;
+}
+.mini-grid {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: whitesmoke;
+  align-self: flex-start;
+  border: 2px solid #dadada;
+  border-radius: 7px;
+}
+
+.mini-grid div {
+  height: 20px;
+  width: 20px;
+}
+.grid:focus .mini-grid:focus .button-score:focus {
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
 }
 
 .grid div {
@@ -11,6 +58,6 @@
   width: 20px;
 }
 
-/* .tetromino {
-  background: royalblue;
-} */
+.tetromino {
+  background-color: blue;
+}
