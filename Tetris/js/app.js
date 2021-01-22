@@ -56,8 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentPosition = 4;
   let currentRotation = 0;
 
-  console.log(theTetrominoes[0][0]);
-
   //randomly select a Tetromino and its first rotation
   let random = Math.floor(Math.random() * theTetrominoes.length);
   let current = theTetrominoes[random][currentRotation];
@@ -69,5 +67,54 @@ document.addEventListener('DOMContentLoaded', () => {
       squares[currentPosition + index].style.backgroundColor = colors[random];
     });
   }
-  draw();
+  //Undraw the Tetromino
+  function undraw() {
+    current.forEach(index => {
+      squares[currentPosition + index].classList.remove('tetromino');
+    });
+  }
+
+  //Tetromino move down every second
+  timerId = setInterval(moveDown, 1000);
+
+  //Move down function
+  function moveDown() {
+    draw();
+    undraw();
+    currentPosition += width;
+    freeze();
+  }
+  //Freeze function
+  function freeze() {
+    if (
+      current.some(index =>
+        squares[currentPosition + index + width].classList.contains('taken')
+      )
+    ) {
+      current.forEach(index =>
+        squares[(currentPosition = index)].classList.add('taken')
+      );
+      //Start a new tetromino falling
+      random = Math.floor(Math.random() * theTetrominoes.length);
+      current = theTetrominoes[random][currentRotation];
+      currentPosition = 4;
+      draw();
+    }
+  }
+  //Move the tetromino left, unless is at edge or there is a blockage
+  function moveLeft() {
+    undraw();
+    const isAtLeftEdge = current.some(
+      index => (currentPosition + index) % width === 0
+    );
+    if (!isAtLeftEdge) currentPosition -= 1;
+    if (
+      current.some(index =>
+        squares[(currentPosition = index)].classList.contains('taken')
+      )
+    ) {
+      currentPosition += 1;
+    }
+    draw();
+  }
 });
